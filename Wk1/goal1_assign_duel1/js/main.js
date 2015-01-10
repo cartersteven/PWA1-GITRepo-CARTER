@@ -79,7 +79,9 @@
     return result;
 
   };
+
   console.log("Program Starts Here");
+    
   fight();
 
 })();
