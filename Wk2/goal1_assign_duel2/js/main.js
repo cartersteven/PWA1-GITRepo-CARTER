@@ -27,24 +27,22 @@
       var f1 = Math.floor(Math.random() * (playerOne[1]-minDamage1)+ minDamage1);   //calculates a random whole number for the damage dealt to player 1
       var f2 = Math.floor(Math.random() * (playerTwo[1]-minDamage2)+ minDamage2);   //calculates a random whole number for the damage dealt to player 2
 
-      //Inflict Damage
-      playerOne[2]-=f1;
-      playerTwo[2]-=f2;
+      playerOne[2]-=f1;   //Inflicts the damage for player one
+      playerTwo[2]-=f2;   //Inflicts the damage for player two
 
-      console.log(playerOne[0]+":"+playerOne[2]+" ** "+playerTwo[0]+":"+playerTwo[2]);
+      console.log(playerOne[0]+":"+playerOne[2]+" ** "+playerTwo[0]+":"+playerTwo[2]);    //Logs the new healths to the console.
 
-      var results = winnerCheck();
+      var results = winnerCheck();    //Invokes the winnerCheck function
 
-      console.log(results);
+      console.log(results);   //Logs the results of the winnerCheck
 
-      if (results === "There is no winner . . . yet."){
-        round++;
-        alert(playerOne[0]+":"+playerOne[2]+" *ROUND " + round + " OVER* "+playerTwo[0]+":"+playerTwo[2]);
-      } else {
-        alert(results);
-        console.log("Program Broken")
-
-        break;
+      if (results === "There is no winner . . . yet."){   //Opens if else switch for the result of winnerCheck
+        round++;    //Increments the round counter
+        alert(playerOne[0]+":"+playerOne[2]+" *ROUND " + round + " OVER* "+playerTwo[0]+":"+playerTwo[2]);    //Alerts the player to the results of the last round.
+      } else {    //Opens the else side of the switch
+        alert(results);   //Alerts the user to the result of winnerCheck
+        console.log("Program Broken");    //Logs the impending break in the program on the next line
+        break;    //Actually breaks the program
       }
 
     };
