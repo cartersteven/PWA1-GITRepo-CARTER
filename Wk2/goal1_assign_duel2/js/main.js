@@ -1,47 +1,31 @@
 /*
   Name: Steven Carter
-  Date: 09/01/15
-  Assignment: Goal1:
-  Assignment: Duel1
+  Date: 015/01/15
+  Assignment: Duel2
 */
 
-(function(){
-  console.log("FIGHT!!!!!");
 
-  //Player One
+(function(){    //Open self executing function
+  console.log("FIGHT!!!!!");    //Console log identifies that the function is self executing.
 
-  var playerOne = ["Spiderman", 20, 100];
-  var playerTwo = ["Batman", 20, 100];
-
-  /*var playerOne[0] = "Spiderman";
-  var playerTwo[0] = "Batman";
-
-  //Player Damages
-  var playerOne[1] = 20;
-  var playerTwo[1] = 20;
-
-  //Player Healths
-  var playerOne[2] = 100;
-  var playerTwo[2] = 100;*/
-
-  //Start Round Counter
-  var round = 0;
-
-  function fight(){
-    console.log("Inside the fight function here.");
-
-    alert(playerOne[0]+":"+playerOne[2]+" *START* "+playerTwo[0]+":"+playerTwo[2]);
+  var playerOne = ["Spiderman", 20, 100];   //Array for player one's stats
+  var playerTwo = ["Batman", 20, 100];    //Array for player two's stats
 
 
-    //Start For Loop
-    for (var i=0; i<10; i++){
-      //Create Minimum Damages
-      var minDamage1 = playerOne[1] * .5;
-      var minDamage2 = playerTwo[1] * .5;
+  var round = 0;    //This sets the round counter to zero. This is because round one has not started yet.
 
-      //Random Damages Made
-      var f1 = Math.floor(Math.random() * (playerOne[1]-minDamage1)+ minDamage1);
-      var f2 = Math.floor(Math.random() * (playerTwo[1]-minDamage2)+ minDamage2);
+  function fight(){   //Defines the beginning of the fight function
+    console.log("Inside the fight function here.");   //Console log that identifies that the fight function has been invoked.
+
+    alert(playerOne[0]+":"+playerOne[2]+" *START* "+playerTwo[0]+":"+playerTwo[2]);   //Alerts the user that the fight has started.
+
+    for (var i=0; i<10; i++){   //Starts for loop for the actual fight
+
+      var minDamage1 = playerOne[1] * .5;   //Sets the minimum damage for player one to half of the maximum damage.
+      var minDamage2 = playerTwo[1] * .5;   //Sets the minimum damage for player two to half of the maximum damage.
+
+      var f1 = Math.floor(Math.random() * (playerOne[1]-minDamage1)+ minDamage1);   //calculates a random whole number for the damage dealt to player 1
+      var f2 = Math.floor(Math.random() * (playerTwo[1]-minDamage2)+ minDamage2);   //calculates a random whole number for the damage dealt to player 2
 
       //Inflict Damage
       playerOne[2]-=f1;
