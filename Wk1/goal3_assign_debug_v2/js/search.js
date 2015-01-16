@@ -1,14 +1,20 @@
+/*
+Name: Steven Carter
+Date: 16/01/15
+Assignment Debug Week1
+*/
+
 // Create privatized scope using a self-executing function
-(function(){
+(function(){		//Starts a self executing function
 	
 	// Variable initialization (DO NOT FIX ANY OF THE BELOW VAR's)
-	var resultsDIV = document.getElementById("results"),
-		searchInput = document.forms[0].search,
-		currentSearch = ''
-	;
+	var resultsDIV = document.getElementById("results"),		//Attempts to get an element with the id of results from the document
+		searchInput = document.forms[0].search,		//initializes a variable that operates as a search
+		currentSearch = ''		//sets the current search to no characters
+	;		//closes the variables initialized
 	
 	// Validates search query
-	var validqte == function(query){
+	var validqte == function(query){		//Starts a variable with a function inside it called validqte
 		
 		// Trim whitespace from start and end of search query
 		while(query.charAt(0) = " "){
