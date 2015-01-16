@@ -8,17 +8,21 @@
 (function(){
   console.log("FIGHT!!!!!");
 
-  //Player Names
-  var playerOneName = "Spiderman";
-  var playerTwoName = "Batman";
+  //Player One
+
+  var playerOne = ["Spiderman", 20, 100];
+  var playerTwo = ["Batman", 20, 100];
+
+  /*var playerOne[0] = "Spiderman";
+  var playerTwo[0] = "Batman";
 
   //Player Damages
-  var playerOneDamage = 20;
-  var playerTwoDamage = 20;
+  var playerOne[1] = 20;
+  var playerTwo[1] = 20;
 
   //Player Healths
-  var playerOneHealth = 100;
-  var playerTwoHealth = 100;
+  var playerOne[2] = 100;
+  var playerTwo[2] = 100;*/
 
   //Start Round Counter
   var round = 0;
@@ -26,24 +30,24 @@
   function fight(){
     console.log("Inside the fight function here.");
 
-    alert(playerOneName+":"+playerOneHealth+" *START* "+playerTwoName+":"+playerTwoHealth);
+    alert(playerOne[0]+":"+playerOne[2]+" *START* "+playerTwo[0]+":"+playerTwo[2]);
 
 
     //Start For Loop
     for (var i=0; i<10; i++){
       //Create Minimum Damages
-      var minDamage1 = playerOneDamage * .5;
-      var minDamage2 = playerTwoDamage * .5;
+      var minDamage1 = playerOne[1] * .5;
+      var minDamage2 = playerTwo[1] * .5;
 
       //Random Damages Made
-      var f1 = Math.floor(Math.random() * (playerOneDamage-minDamage1)+ minDamage1);
-      var f2 = Math.floor(Math.random() * (playerTwoDamage-minDamage2)+ minDamage2);
+      var f1 = Math.floor(Math.random() * (playerOne[1]-minDamage1)+ minDamage1);
+      var f2 = Math.floor(Math.random() * (playerTwo[1]-minDamage2)+ minDamage2);
 
       //Inflict Damage
-      playerOneHealth-=f1;
-      playerTwoHealth-=f2;
+      playerOne[2]-=f1;
+      playerTwo[2]-=f2;
 
-      console.log(playerOneName+":"+playerOneHealth+" ** "+playerTwoName+":"+playerTwoHealth);
+      console.log(playerOne[0]+":"+playerOne[2]+" ** "+playerTwo[0]+":"+playerTwo[2]);
 
       var results = winnerCheck();
 
@@ -51,7 +55,7 @@
 
       if (results === "There is no winner . . . yet."){
         round++;
-        alert(playerOneName+":"+playerOneHealth+" *ROUND " + round + " OVER* "+playerTwoName+":"+playerTwoHealth);
+        alert(playerOne[0]+":"+playerOne[2]+" *ROUND " + round + " OVER* "+playerTwo[0]+":"+playerTwo[2]);
       } else {
         alert(results);
         console.log("Program Broken")
@@ -68,20 +72,20 @@
     //starter variable
     var result = "There is no winner . . . yet.";
     //if statement
-    if(playerOneHealth<1 && playerTwoHealth<1){
+    if(playerOne[2]<1 && playerTwo[2]<1){
       result = "You Both Die";
-    } else if (playerOneHealth<1){
-      result = playerTwoName+" is the winner!"
-    } else if (playerTwoHealth<1){
-      result = playerOneName+" is the winner!"
+    } else if (playerOne[2]<1){
+      result = playerTwo[0]+" is the winner!"
+    } else if (playerTwo[2]<1){
+      result = playerOne[0]+" is the winner!"
     };
-    
+
     return result;
 
   };
 
   console.log("Program Starts Here");
-    
+
   fight();
 
 })();
