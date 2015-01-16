@@ -43,31 +43,29 @@
         alert(results);   //Alerts the user to the result of winnerCheck
         console.log("Program Broken");    //Logs the impending break in the program on the next line
         break;    //Actually breaks the program
-      }
+      }   //closes the if switch
 
-    };
+    }   //closes teh for loop
 
-  };
+  }   //closes the fight function
 
-  function winnerCheck(){
-    console.log("inside Winner Check")
-    //starter variable
-    var result = "There is no winner . . . yet.";
-    //if statement
-    if(playerOne[2]<1 && playerTwo[2]<1){
-      result = "You Both Die";
-    } else if (playerOne[2]<1){
-      result = playerTwo[0]+" is the winner!"
-    } else if (playerTwo[2]<1){
-      result = playerOne[0]+" is the winner!"
-    };
+  function winnerCheck(){   //Opens the winnerCheck function
+    console.log("inside Winner Check");   //Logs that the program started the winnerCheck function
+    var result = "There is no winner . . . yet.";   //Sets the result to be that nobody has one yet
+    if(playerOne[2]<1 && playerTwo[2]<1){   //Starts if else statement for whether the healths of the players are less than 1
+      result = "You Both Die";    //if both are less than one, both die
+    } else if (playerOne[2]<1){   //first else statement if playerOne's health is less than 1
+      result = playerTwo[0]+" is the winner!";    //playerTwo is the winner
+    } else if (playerTwo[2]<1){   //second else statement if playerTwo's health is less than 1
+      result = playerOne[0]+" is the winner!";    //playerTwo is the winner
+    }
 
-    return result;
+    return result;    //Returns the result
 
-  };
+  }   //closes the winnerCheck function
 
-  console.log("Program Starts Here");
+  console.log("Program Starts Here");   //logs that the program is JUST starting
 
-  fight();
+  fight();    //calls the fight function
 
-})();
+})();   //closes the self executing function
