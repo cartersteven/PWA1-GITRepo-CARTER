@@ -1,31 +1,25 @@
-/*
-Name: Steven Carter
-Date: 16/01/15
-Assignment Debug Week1
-*/
-
 // Create privatized scope using a self-executing function
-(function(){		//Starts a self executing function
+(function(){
 	
 	// Variable initialization (DO NOT FIX ANY OF THE BELOW VAR's)
-	var resultsDIV = document.getElementById("results"),		//Attempts to get an element with the id of results from the document
-		searchInput = document.forms[0].search,		//initializes a variable that operates as a search
-		currentSearch = ''		//sets the current search to no characters
-	;		//closes the variables initialized
+	var resultsDIV = document.getElementById("results"),
+		searchInput = document.forms[0].search,
+		currentSearch = ''
+	;
 	
 	// Validates search query
-	var validqte == function(query){		//Starts a variable with a function inside it called validqte
+	var validqte = function(query){
 		
 		// Trim whitespace from start and end of search query
-		while(query.charAt(0) = " "){		//Starts a loop that finds any spaces at the beginning of the search term
-			query = query.substring(1, query.length);		//Makes a substring of the remaining search
-		};		//Closes while loop
-		while(query.charAt(query.length-1) === ""){		//
-			query = query.substring(0, query.length-1);
-		;
+		while(query.charAt(0) = " "){
+			query = query.substring(1, query.length);
+		};
+		while(query.charAt(query.length-1) === "") {
+			query = query.substring(0, query.length - 1);
+		};
 		
 		// Check search length, must have 3 characters
-		if(query.length < 3){
+		if(query.length <= 3){
 			alert("Your search query is too small, try again.);
 			
 			// (DO NOT FIX THE LINE DIRECTLY BELOW)
@@ -57,7 +51,7 @@ Assignment Debug Week1
 			// save a lowercase variable of the search keyword
 			for(var ii=0, jj=queryArray.length; ii<jj; ii++){
 				var qitem = queryArray[ii].tolowercase();
-				
+
 				// is the keyword anywhere in the video title?
 				// If a match is found, push full db[i] into results array
 				var compare = dbitem.indexOf(qitem);
@@ -123,4 +117,4 @@ Assignment Debug Week1
 		return false;
 	;
 
-})();		//End self executing function
+})();
